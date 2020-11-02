@@ -1,0 +1,10 @@
+console.log("上传docker 至 hub docker");
+const execSync = require('child_process').execSync;
+console.log("开始");
+execSync("docker build -t diwangtaotao/serverweb:latest ."); 
+console.log("创建 docker 镜像成功");
+execSync("echo wangtao_I_610 | docker login -u diwangtaotao --password-stdin"); 
+console.log("登录docker hub 成功");
+execSync("docker push diwangtaotao/serverweb:latest"); 
+console.log("上传镜像至 docker hub");
+console.log("结束");
